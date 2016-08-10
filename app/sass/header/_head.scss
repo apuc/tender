@@ -1,0 +1,231 @@
+.header{
+  width: 100%;
+  float: left;
+  display: block;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  background-position-x: 50%;
+  background-image: url("../img/header-fon.png");
+  background-size: cover;
+  padding-top: 300px;
+  box-sizing: border-box;
+  position: relative;
+}
+.header__mnu, .header__logo, .header__number{
+  float: left;
+  display: inline-block;
+  width: 33.3%;
+  position: relative;
+}
+.header__logo{
+  font-family: $mon;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  z-index: 2;
+  line-height: 48px;
+  &_circle{
+    size: 35px;
+    border-radius: 100%;
+    border: 10px solid #393;
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+    left: 43%;
+    top: -1px;
+  }
+}
+.header__number{
+  font-family: $ub;
+  font-size: 20px;
+  p{
+    color: #fff;
+    border-bottom: 1px #fff dotted;
+    min-width: 175px;
+    display: inline-block;
+    line-height: 48px;
+    margin: 0;
+    position: relative;
+    left: 40%;
+  }
+}
+.header__about{
+  width: 80%;
+  position: relative;
+  margin: 0 auto;
+  float: none;
+  padding: 120px 0 140px;
+  box-sizing: border-box;
+  &_text{
+    font-family: $ub;
+    h2{
+      color: #fff;
+      font-weight: 400;
+      font-size: 30px;
+      margin: 0;
+    }
+    .color{
+      color: #0bb743;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 36px;
+    }
+  }
+  &_rect{
+    width: 100%;
+    float: left;
+    display: block;
+    padding: 140px 0;
+    box-sizing: border-box;
+    &-small{
+      width: 20%;
+      float: left;
+      height: 120px;
+      border: 2px solid #26a340;
+      position: relative;
+      left: 2%;
+      margin-right: 35px;
+      p{
+        color: #fff;
+        font-size: 18px;
+        font-family: $ub;
+        font-weight: 400;
+        padding: 36px 50px;
+        margin: 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .circle-red{
+        position: absolute;
+        size:40px;
+        border-radius: 50%;
+        background-color: #f51a3e;
+        right: 89%;
+        bottom: 83%;
+        font-size: 20px;
+        font-family: $mon;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        line-height: 38px;
+
+        text-shadow: 0 0 6px rgba(255,255,255,0.7);
+      }
+    }
+    &::after{
+      content: "";
+      width: 42px;
+      position: absolute;
+      border-top: 1px solid #26a340;
+      left: 21%;
+      bottom: -60px;
+    }
+    &-large{
+      width: 60%;
+      float: left;
+      height: 120px;
+      background-color: rgba(38, 163, 64, 0.64);
+      border: 2px solid rgba(38, 163, 64, 0.64);
+      p{
+        color: #fff;
+        font-size: 18px;
+        font-family: $ub;
+        font-style: italic;
+        padding: 36px 60px;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+.tyara{
+  width: 405px;
+  height: 560px;
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  img{
+    position: absolute;
+    right: 3px;
+    bottom: -48px;
+    width: 90%;
+  }
+}
+
+.mnu_toggle {
+		display: block;
+    width: 50px;
+    left: 10%;
+    height: 50px;
+    position: relative;
+    z-index: 3;
+    border: none;
+    top: 0;
+    border-radius: 50%;
+    background-color: rgba(202, 200, 199, 0.38);
+    outline: none; }
+		span {
+    		display: block; }
+			.sandwich {
+			  // width: 34px;
+			  // height: 34px;
+			  position: absolute;
+			  top: 10px;
+			  bottom: 0;
+			  left: 0;
+			  right: 0;
+			  margin: auto;
+			  z-index: 200;
+        transform: translate(32%, 20%);
+       }
+
+				.sw-topper {
+				  position: relative;
+				  top: 0;
+				  width: 17px;
+				  height: 2px;
+				  background: white;
+				  border: none;
+				  border-radius:4px;
+				  transition: transform 0.5s, top 0.2s;
+				  display: block; }
+
+				.sw-bottom {
+				  position: relative;
+				  width: 17px;
+				  height: 2px;
+				  top: 3.6px;
+				  background: white;
+				  border: none;
+				  border-radius:4px;
+				  transition: transform 0.5s, top 0.2s;
+				  transition-delay: 0.2s, 0; }
+
+				.sw-footer {
+				  position: relative;
+				  width: 17px;
+				  height: 2px;
+				  top: 7.5px;
+				  background: white;
+				  border: none;
+				  border-radius: 4px;
+				  transition: all 0.5s;
+				  transition-delay: 0.1s; }
+
+				.sandwich.active .sw-topper {
+				  top: 8px;
+				  transform: rotate(-45deg); }
+				.sandwich.active .sw-bottom {
+				  top: 6px;
+				  transform: rotate(45deg); }
+				.sandwich.active .sw-footer {
+				  opacity: 0;
+				  top: 0;
+				  transform: rotate(180deg); }
+.mnu{
+  display: none;
+  width: 100%;
+  float: left;
+}
