@@ -65,10 +65,10 @@ gulp.task('sass', function() { // Создаем таск Sass
             cascade: true
         }),
         sorting(),
-        pxtorem({
-            rootValue: 14,
-            replace: false
-        }),
+        // pxtorem({
+        //     rootValue: 14,
+        //     replace: false
+        // }),
         stylefmt,
         stylelint(),
 
@@ -96,7 +96,7 @@ gulp.task('sass', function() { // Создаем таск Sass
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
         proxy: {
-            target: 'tender' // Директория для сервера - app
+            target: 'brocard-tender' // Директория для сервера - app
         },
         ghostMode: {
             clicks: true,
