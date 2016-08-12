@@ -431,7 +431,7 @@
         width: 60px;
         position: relative;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         margin: 22px auto;
       }
       .icon-note{
@@ -460,7 +460,8 @@
           position: absolute;
           border-radius: 50%;
           z-index: 2;
-          margin-top: -4px;
+          margin-top: -5px;
+
         }
       }
       &_text{
@@ -479,5 +480,153 @@
   }
   .what-are-we-doing{
     font-weight: 400;
+  }
+}
+
+.managing-structure{
+  width: 100%;
+  float: left;
+  display: block;
+  position: relative;
+  text-align: center;
+  padding: 250px 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.about-it{
+  width: 100%;
+  float: left;
+  display: block;
+  position: relative;
+  text-align: center;
+  background-image: url("../img/about-it.png");
+  background-position-y: 100%;
+  background-size: cover;
+  background-position-x: 50%;
+  padding: 250px 0;
+  box-sizing: border-box;
+  .white-line{
+    background-color: #fff;
+  }
+  .title-text-white{
+    color: #fff;
+  }
+  &__oborot{
+    background-color: #036;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 80%;
+    float: none;
+    margin: 0 auto;
+    padding: 50px 80px;
+    box-sizing: border-box;
+    display: inline-block;
+    &_title{
+      color: #fff;
+      font-family: $ub;
+      font-weight: 700;
+      text-align: center;
+      font-size: 18px;
+      line-height: 25px;
+    }
+    &_items{
+      float: left;
+      width: 25%;
+      text-align: center;
+      position: relative;
+      margin-top: 30px;
+      &_thumb{
+        height: 45px;
+        width: auto;
+        position: relative;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        background-image: url("../img/red-krest.png");
+        background-size: contain;
+        size: 24px;
+        margin-left: -12px;
+        margin-top: -115px;
+      }
+      &_text{
+        color: #fff;
+        font-family: $ub;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 10px 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    }
+  }
+  &__form{
+    width: 100%;
+    float: left;
+    z-index: 2;
+    background-color: #f5f5f5;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 40px 0;
+    box-sizing: border-box;
+    .title-blue{
+      color: #005193;
+      padding: 0 150px;
+      box-sizing: border-box;
+      span{
+        color: #f51a3e;
+        font-weight: 700;
+        display: inline-block;
+      }
+    }
+    &_form-2{
+      display: inline-block;
+      width: 70%;
+      float: none;
+      margin: 0 auto;
+      .about-it_input{
+        min-width: 260px;
+        height: 45px;
+        line-height: 45px;
+        float: left;
+        padding-left: 15px;
+        box-sizing: border-box;
+        background-color: #e6e5e5;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 10px 0;
+        margin-right: 25px;
+        outline: none;
+      }
+      ::-webkit-input-placeholder {font-family: $ub; font-size: 16px; font-weight: 400; color: #000;}
+      ::-moz-placeholder          {font-family: $ub; font-size: 16px; font-weight: 400; color: #000;}
+      :-moz-placeholder           {font-family: $ub; font-size: 16px; font-weight: 400; color: #000;}
+      :-ms-input-placeholder      {font-family: $ub; font-size: 16px; font-weight: 400; color: #000;}
+      &_send-btn{
+        margin: 10px 0;
+      }
+      .fokus-1:focus{
+        border: 1px solid #f54663;
+      }
+      .fokus-2:focus{
+        border: 1px solid #0bb743;
+      }
+    }
+    &_footnote{
+      display: inline-block;
+      font-family: $ub;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      width: 35%;
+      color: rgba(1, 1, 1, 0.76);
+      span{
+        float: left;
+        font-weight: 700;
+        color: #f51a3e;
+      }
+    }
   }
 }
