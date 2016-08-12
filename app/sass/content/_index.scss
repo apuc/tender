@@ -416,24 +416,36 @@
   padding: 250px 0;
   box-sizing: border-box;
   &__wawd{
-    width: 80%;
+    width: 60%;
     float: none;
     margin: 0 auto;
     display: inline-block;
+    padding: 20px 0;
+    box-sizing: border-box;
     &_items{
       width: 25%;
       float: left;
       text-align: center;
       &_icon{
-        height: 65px;
-        width: 65px;
-        position: absolute;
+        height: 60px;
+        width: 60px;
+        position: relative;
         background-repeat: no-repeat;
         background-size: cover;
+        margin: 22px auto;
       }
       .icon-note{
         background-image: url("../img/icon-note.png");
-
+      }
+      .icon-hands{
+        background-image: url("../img/icon-hands.png");
+        background-size: contain;
+      }
+      .icon-price{
+        background-image: url("../img/icon-price.png");
+      }
+      .icon-trophy{
+        background-image: url("../img/icon-trophy.png");
       }
       &_line{
         width: 100%;
@@ -450,6 +462,15 @@
           z-index: 2;
           margin-top: -4px;
         }
+      }
+      &_text{
+        color: #fff;
+        font-size: 16px;
+        font-family: $ub;
+        font-weight: 400;
+        padding: 20px 16px;
+        box-sizing: border-box;
+
       }
     }
   }
