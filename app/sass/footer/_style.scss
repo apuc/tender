@@ -1,0 +1,43 @@
+.footer{
+  background-color: #0f2946;
+  width: 100%;
+  float: left;
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+  .confidicatal{
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    font-family: $ub;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 0 73px;
+    box-sizing: border-box;
+    a{
+      color: #fff;
+    }
+  }
+  .worker{
+    width: 33.3%;
+    float: left;
+    color: #fff;
+    font-family: $ub;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    a{
+      float: left;
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      img{
+        position: absolute;
+        left: 24%;
+      }
+    }
+  }
+}
