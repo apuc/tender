@@ -138,13 +138,13 @@ $(document).ready(function () {
     			current_fs.css({'transform': 'scale('+scale+')'});
     			next_fs.css({'left': left, 'opacity': opacity});
     		},
-    		duration: 500,
+    		duration: 800,
     		complete: function(){
     			current_fs.hide();
     			animating = false;
     		},
     		//this comes from the custom easing plugin
-    		easing: 'easeOutQuint'
+    		easing: 'easeInOutBack'
     	});
     });
 
@@ -173,19 +173,20 @@ $(document).ready(function () {
     			current_fs.css({'left': left});
     			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
     		},
-    		duration: 500,
+    		duration: 800,
     		complete: function(){
     			current_fs.hide();
     			animating = false;
     		},
     		//this comes from the custom easing plugin
-    		easing: 'easeOutQuint'
+    		easing: 'easeInOutBack'
     	});
     });
 
     $(".submit").click(function(){
     	return false;
     })
+
 /////////////////////////////
 
     $('.center').slick({
