@@ -186,26 +186,81 @@ $(document).ready(function () {
     $(".submit").click(function(){
     	return false;
     })
+/////////////////////////////
 
-
-
-    var carousel = $("#carousel").featureCarousel({
-      // include options like this:
-      // (use quotes only for string values, and no trailing comma after last option)
-      // option: value,
-      // option: value
+    $('.center').slick({
+        arrows: true,
+        centerMode: true,
+        centerPadding: '160px',
+        dots: false,
+        infinite: true,
+        variableWidth: true,
+        slidesToShow: 1,
     });
 
-    $("#but_prev").click(function () {
-      carousel.prev();
+    // Bootstrap YouTube API
+    // var tag = document.createElement('script');
+    // tag.src = 'https://www.youtube.com/iframe_api';
+    // var firstScriptTag = document.getElementsByTagName('script')[0];
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    //
+    // var currentPlayer;
+    //
+    // $('#c1').on('click',function(){
+    //     var player = new YT.Player('c1', {
+    //         width: '305',
+    //         videoId: 'c07DH4HY2CA',
+    //         events: {
+    //             'onReady': onPlayerReady,
+    //             'onStateChange': onPlayerStateChange
+    //         }
+    //     });
+    //     currentPlayer = player;
+    // });
+    //
+    // $('#c2').on('click',function(){
+    //     var player = new YT.Player('c2', {
+    //         width: '305',
+    //         videoId: '1bdtSFxBYW0',
+    //         events: {
+    //             'onReady': onPlayerReady,
+    //             'onStateChange': onPlayerStateChange
+    //         }
+    //     });
+    //     currentPlayer = player;
+    // });
+    //
+    // $('#c3').on('click',function(){
+    //     var player = new YT.Player('c3', {
+    //         width: '305',
+    //         videoId: 'Js_Jv5EzOv0',
+    //         events: {
+    //             'onReady': onPlayerReady,
+    //             'onStateChange': onPlayerStateChange
+    //         }
+    //     });
+    //     currentPlayer = player;
+    // });
+
+    $('.slick-prev').on('click',function(){
+        console.log('slick-prev');
+        if(currentPlayer)
+        currentPlayer.pauseVideo();
     });
-    $("#but_pause").click(function () {
-      carousel.pause();
+
+    $('.slick-next').on('click',function(){
+        console.log('slick-next');
+        if(currentPlayer)
+            currentPlayer.pauseVideo();
     });
-    $("#but_start").click(function () {
-      carousel.start();
-    });
-    $("#but_next").click(function () {
-      carousel.next();
-    });
+
+    // function onPlayerReady(event) {
+    //     event.target.playVideo();
+    // }
+    //
+    // function onPlayerStateChange(event){
+    //     if (event.data == YT.PlayerState.PLAYING) {
+    //         currentPlayer = event.target;
+    //     }
+    // }
 });

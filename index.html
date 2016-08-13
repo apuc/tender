@@ -8,8 +8,8 @@
     <meta name="format-detection" content="telephone=no">
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <link href="css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="css/feature-carousel.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <section class="header">
@@ -255,23 +255,11 @@
   <div class="container">
     <span class="line green-line"></span>
     <h2 class="title-text title-text-white"><b>Истории о том, как мы выигрывали заточенные тендеры<br>под конкретного исполнителя</b></h2>
-    <div id="carousel">
-      <div class="carousel-feature">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/263Q9Ml_MAY" frameborder="0" allowfullscreen></iframe>
-
-      </div>
-      <div class="carousel-feature">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/263Q9Ml_MAY" frameborder="0" allowfullscreen></iframe>
-
-      </div>
-      <div class="carousel-feature">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/263Q9Ml_MAY" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="carousel-feature">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/263Q9Ml_MAY" frameborder="0" allowfullscreen></iframe>
-
-      </div>
-    </div>
+    <div class="slider center">
+		<div id="c1" data-vid="c1vid" class="clickVid"><iframe width="580" height="380" src="https://www.youtube.com/embed/c07DH4HY2CA" frameborder="0" allowfullscreen></iframe></div>
+		<div id="c2" data-vid="c2vid" class="clickVid"><iframe width="580" height="380" src="https://www.youtube.com/embed/c07DH4HY2CA" frameborder="0" allowfullscreen></iframe></div>
+		<div id="c3" data-vid="c3vid" class="clickVid"><iframe width="580" height="380" src="https://www.youtube.com/embed/c07DH4HY2CA" frameborder="0" allowfullscreen></iframe></div>
+	</div>
   </div>
 </section>
 <section class="form">
@@ -417,7 +405,7 @@
 <script src="js/script.min.js" type="text/javascript"></script>
 <script src="js/jquery.classyloader.min.js" type="text/javascript"></script>
 <script src="js/jquery.circleGraphic.js" type="text/javascript"></script>
-<script src="js/jquery.featureCarousel.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 </html>
 
