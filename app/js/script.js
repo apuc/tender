@@ -197,51 +197,19 @@ $(document).ready(function () {
         infinite: true,
         variableWidth: true,
         slidesToShow: 1,
+        responsive: [
+        {
+          breakpoint: 736,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+      ]
     });
 
-    // Bootstrap YouTube API
-    // var tag = document.createElement('script');
-    // tag.src = 'https://www.youtube.com/iframe_api';
-    // var firstScriptTag = document.getElementsByTagName('script')[0];
-    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    //
-    // var currentPlayer;
-    //
-    // $('#c1').on('click',function(){
-    //     var player = new YT.Player('c1', {
-    //         width: '305',
-    //         videoId: 'c07DH4HY2CA',
-    //         events: {
-    //             'onReady': onPlayerReady,
-    //             'onStateChange': onPlayerStateChange
-    //         }
-    //     });
-    //     currentPlayer = player;
-    // });
-    //
-    // $('#c2').on('click',function(){
-    //     var player = new YT.Player('c2', {
-    //         width: '305',
-    //         videoId: '1bdtSFxBYW0',
-    //         events: {
-    //             'onReady': onPlayerReady,
-    //             'onStateChange': onPlayerStateChange
-    //         }
-    //     });
-    //     currentPlayer = player;
-    // });
-    //
-    // $('#c3').on('click',function(){
-    //     var player = new YT.Player('c3', {
-    //         width: '305',
-    //         videoId: 'Js_Jv5EzOv0',
-    //         events: {
-    //             'onReady': onPlayerReady,
-    //             'onStateChange': onPlayerStateChange
-    //         }
-    //     });
-    //     currentPlayer = player;
-    // });
 
     $('.slick-prev').on('click',function(){
         console.log('slick-prev');

@@ -101,16 +101,77 @@
 		display: none;
 	}
 	.cause{
-	
+		padding: 60px 0;
+		.cause__tabs{
+			width: 100%;
+			.title__tabs{
+				width: 100%;
+				ul{
+					li{
+						.page__tabs_target{
+							.tab-circle{
+								left: 25px;
+							}
+							.page__tabs_target_text{
+								font-size: 16px;
+							}
+						}
+					}
+				}
+			}
+			.page__box{
+				display: none;
+			}
+		}
 	}
 	.video-slider{
-		display: none;
+		padding: 60px 0;
+		.slick-slider{
+			.slick-next, .slick-arrow{
+				display: none !important;
+			}
+		}
+
 	}
 	.form{
-		display: none;
+		padding: 60px 0 100px;
+		.form__block{
+			width: 100%;
+			&_triangle{
+				display: none;
+			}
+			&_tender-form{
+				padding: 50px 17px;
+				width: 100%;
+				input{
+					min-width: 100%;
+					padding-left: 10px;
+				}
+				.small-input{
+					min-width: inherit;
+					width: 46%;
+					&:last-of-type {
+					    margin-left: 8%;
+					}
+				}
+
+				.keyboard {
+			    bottom: -80px;
+			    left: -87px;
+			    width: 100%;
+			    height: auto;
+			}
+			}
+		}
 	}
 	.stage{
-		display: none;
+		padding: 60px 0;
+		.stage__wawd{
+			display: none;
+		}
+		.stage__wawd-mobile{
+			display: block;
+		}
 	}
 	.managing-structure{
 		display: none;
@@ -119,7 +180,12 @@
 		display: none;
 	}
 	.tender-map{
-		display: none;
+		.tender-map__contacts{
+			top: 65px;
+			left: 0;
+			margin-left: 2%;
+			margin-right: 2%;
+		}
 	}
 }
 
