@@ -1,23 +1,133 @@
 @media only screen and (max-width: 1024px) {
-	
+
 }
 
 @media only screen and (max-width: 980px) {
-	
+
 }
 
 @media only screen and (max-width: 770px) {
-	
+
 }
 
 @media only screen and (max-width: 736px) {
+	.header{
+		padding-top: 30px;
+	}
+	.header__mnu{
+		position: relative;
+		z-index: 9999;
+	}
+	.header__number{
+		display: none;
+	}
+	.header__call-icon{
+		display: block;
+	}
+	.header__about{
+		width: 100%;
+		&_text{
+			h2{
+				font-size: 20px;
+				text-align: justify;
+				.color{
+					font-size: 22px;
+				}
+			}
+		}
+		&_rect{
+			padding: 60px 0 30px;
+			&-small{
+					margin: 0 auto;
+					width: 60%;
+					height: 60px;
+					float: none;
+					p{
+						padding: 0;
+						line-height: 60px;
+					}
+			}
+			&::after{
+				content: "";
+				position: absolute;
+				border-right: 1px solid #26a340;
+				left: 38%;
+				bottom: -22px;
+				height: 40px;
+				border-top: none;
+			}
+			&-large{
+				margin: 35px auto;
+				width: 100%;
+				height: 85px;
+				box-sizing: border-box;
+				float: none;
+				p{
+					padding: 7px;
+					text-align: justify;
+				}
+			}
+		}
+	}
+	.tyara{
+		display: none;
+	}
+	.mnu{
+		width: 100%;
+		text-align: center;
+	}
+
+	.we-know-how{
+		padding: 60px 0;
+		.we-know-how__block-percent_item{
+			flex-basis: 100%;
+			p{
+				max-width: 60%;
+			}
+		}
+		.we-know-how__cards{
+			width: 93%;
+			.black-text{
+				font-size: 15px;
+				padding: 15px 5px 10px;
+				box-sizing: border-box;
+			}
+			&::after{
+				background-size: contain;
+			}
+		}
+	}
+	.cards-form{
+		display: none;
+	}
+	.cause{
 	
+	}
+	.video-slider{
+		display: none;
+	}
+	.form{
+		display: none;
+	}
+	.stage{
+		display: none;
+	}
+	.managing-structure{
+		display: none;
+	}
+	.about-it{
+		display: none;
+	}
+	.tender-map{
+		display: none;
+	}
 }
 
+
 @media only screen and (max-width: 500px) {
-	
+
 }
 
 @media only screen and (max-width: 320px) {
-	
+
 }

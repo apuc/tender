@@ -95,6 +95,7 @@
   font-size: 20px;
   b{
     font-weight: 700;
+    color: #0bb743;
   }
 }
 .blue-text{
@@ -150,8 +151,8 @@
 #msform fieldset:not(:first-of-type) {
 	display: none;
 }
-//inputs
-#msform input, #msform textarea {
+
+#msform input  {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -162,9 +163,27 @@
 	color: #2C3E50;
 	font-size: 13px;
 }
+#msform textarea{
+  min-width: 500px;
+  resize: none;
+  height: 45px;
+  line-height: 38px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: $ub;
+  font-weight: 400;
+  	border: 1px solid #ccc;
+  border-radius: 5px;
+}
+// ::-webkit-input-placeholder  {font-family: $ub; font-size: 16px; font-weight: 400; color: #ссс;}
+// ::-moz-placeholder{font-family: $ub; font-size: 16px; font-weight: 400; color: #ссс;}
+// :-moz-placeholder{font-family: $ub; font-size: 16px; font-weight: 400; color: #ссс;}
+// :-ms-input-placeholder{font-family: $ub; font-size: 16px; font-weight: 400; color: #ссс;}
+
+
 input[type="radio"] {
     display:none;
-
 }
 input[type="radio"] + label span {
     display:inline-block;
@@ -224,7 +243,7 @@ input[type="radio"]:checked + label span {
   font-weight: 700;
 	margin-bottom: 10px;
   line-height: 30px;
-  width: 61%;
+  width: 80%;
   float: left;
   text-align: left;
   display: inline-block;
@@ -238,6 +257,19 @@ input[type="radio"]:checked + label span {
     margin-right: 15px;
     text-align: center;
     float: left;
+  }
+  &-about{
+    display: inline-block;
+    width: 65%;
+    float: left;
+    font-size: 14px;
+    font-family: $ub;
+    font-weight: 400;
+    color: #8a9bae;
+    margin: 0;
+    padding-left: 58px;
+    box-sizing: border-box;
+    text-align: left;
   }
 }
 .msform-line{

@@ -50,6 +50,15 @@
     left: 40%;
   }
 }
+.header__call-icon{
+  display: none;
+  background-image: url("../img/icon-tel.png");
+  background-repeat: no-repeat;
+  size: 30px;
+  float: right;
+  cursor: pointer;
+  background-size: contain;
+}
 .header__about{
   width: 80%;
   position: relative;
@@ -228,4 +237,18 @@
   display: none;
   width: 100%;
   float: left;
+  background-color: #005193;
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  li{
+    list-style-type: none;
+    a{
+      color: #fff;
+      font-size: 18px;
+      font-family: $ub;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
 }
