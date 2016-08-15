@@ -19,6 +19,8 @@ $(document).ready(function () {
   		};
   	});
 
+// open circle-loader //
+
     $('.loader-1').ClassyLoader({
         width:110,
         height:110,
@@ -64,6 +66,10 @@ $(document).ready(function () {
         start: 'top',
     });
 
+// close circle-loader //
+
+// open mobile-tab //
+
     $('.page__tabs_target').click(function(event) {
       $('.page__tabs_target').removeClass('page__tabs_active');
       $(this).addClass('page__tabs_active');
@@ -74,39 +80,22 @@ $(document).ready(function () {
       $("."+ target).show();
     });
 
-    // When the window has finished loading create our google map below
+// close mobile-tab //    
+
+// open map //
     google.maps.event.addDomListener(window, 'load', init);
 
     function init() {
-        // Basic options for a simple Google Map
-        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
         var mapOptions = {
-            // How zoomed in you want the map to start at (always required)
             zoom: 15,
-
-            // The latitude and longitude to center the map (always required)
             center: new google.maps.LatLng(55.7693135, 37.5948613), // New York
-
-            // How you would like to style the map.
-            // This is where you would paste any style found on Snazzy Maps.
             styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},{"weight":2},{"gamma":0.84}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]}]
         };
-
-        // Get the HTML DOM element that will contain your map
-        // We are using a div with id="map" seen below in the <body>
         var mapElement = document.getElementById('map');
-
-        // Create the Google Map using our element and options defined above
         var map = new google.maps.Map(mapElement, mapOptions);
 
-        // Let's also add a marker while we're at it
-        // var marker = new google.maps.Marker({
-        //     position: new google.maps.LatLng(55.7693135, 37.5948613),
-        //     map: map,
-        //     title: 'Snazzy!'
-        // });
     }
-
+// close map //
 
 
     var current_fs, next_fs, previous_fs; //fieldsets
@@ -218,35 +207,6 @@ $(document).ready(function () {
         },
       ]
     });
-    $('.center-2').slick({
-        arrows: true,
-        centerMode: true,
-        centerPadding: '160px',
-        dots: false,
-        infinite: true,
-        variableWidth: true,
-        slidesToShow: 1,
-        responsive: [
-        {
-          breakpoint: 736,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 1020,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-      ]
-    });
 
 
     $('.slick-prev').on('click',function(){
@@ -266,54 +226,131 @@ $(document).ready(function () {
 
 
 
+// open modal-tab //
 
-        $('.page__tabs_target').click(function() {
-          var width =  $(window).width();
-          console.log(width);
-          if(width<=736) {
-            var tab = $(this).data('tab');
-            console.log(tab);
-            var art = $('article.'+tab);
-            $('.page__box').show();
-            art.show();
-            console.log(art);
-          }
-    });
-
-////////
-$(".owl-carousel").owlCarousel({
-  loop: true,
-  margin: 35,
-  nav : true,
-  navText: false,
-  navigation:true,
-  /*pagination : true,*/
-  items: 3,
-  autoplay: false,
-  /*singleItem:true,*/
-  responsiveClass:true,
-  responsive: {
-    0: {
-      items: 1,
-      nav: true,
-    },
-    600: {
-      items: 1,
-      nav: true,
-    },
-    1000: {
-      items: 1,
-      nav: true,
-      loop: true,
-    },
-    1200: {
-      items: 3,
-      nav: true,
-      loop: true,
-
+  $('.page__tabs_target').click(function() {
+    var width =  $(window).width();
+    console.log(width);
+    if(width<=736) {
+      var tab = $(this).data('tab');
+      console.log(tab);
+      var art = $('article.'+tab);
+      $('.page__box').show();
+      art.show();
+      console.log(art);
     }
-  }
+  });
+
+// close modal-tab //
+
+//Image-slider open //
+
+//slideshow style interval
+var autoSwap = setInterval( swap,3500);
+
+//pause slideshow and reinstantiate on mouseout
+$('ul, span').hover(
+function () {
+  clearInterval(autoSwap);
+},
+function () {
+ autoSwap = setInterval( swap,3500);
 });
+
+//global variables
+var items = [];
+var startItem = 1;
+var position = 0;
+var itemCount = $('.carousel li.items').length;
+var leftpos = itemCount;
+var resetCount = itemCount;
+
+//unused: gather text inside items class
+$('li.items').each(function(index) {
+  items[index] = $(this).text();
+});
+
+//swap images function
+function swap(action) {
+var direction = action;
+
+//moving carousel backwards
+if(direction == 'counter-clockwise') {
+  var leftitem = $('.left-pos').attr('id') - 1;
+  if(leftitem == 0) {
+    leftitem = itemCount;
+  }
+
+  $('.right-pos').removeClass('right-pos').addClass('back-pos');
+  $('.main-pos').removeClass('main-pos').addClass('right-pos');
+  $('.left-pos').removeClass('left-pos').addClass('main-pos');
+  $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
+
+  startItem--;
+  if(startItem < 1) {
+    startItem = itemCount;
+  }
+}
+
+// //moving carousel forward
+// if(direction == 'clockwise' || direction == '' || direction == null ) {
+//   function pos(positionvalue) {
+//     if(positionvalue != 'leftposition') {
+//       //increment image list id
+//       position++;
+//
+//       //if final result is greater than image count, reset position.
+//       if((startItem+position) > resetCount) {
+//         position = 1-startItem;
+//       }
+//     }
+//
+//     //setting the left positioned item
+//     if(positionvalue == 'leftposition') {
+//       //left positioned image should always be one left than main positioned image.
+//       position = startItem - 1;
+//
+//       //reset last image in list to left position if first image is in main position
+//       if(position < 1) {
+//         position = itemCount;
+//       }
+//     }
+//
+//     return position;
+//   }
+//
+//  $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
+//  $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
+//  $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
+//  $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
+//
+//   startItem++;
+//   position=0;
+//   if(startItem > itemCount) {
+//     startItem = 1;
+//   }
+// }
+}
+//next button click function
+$('#next').click(function() {
+swap('clockwise');
+});
+
+//prev button click function
+$('#prev').click(function() {
+swap('counter-clockwise');
+});
+
+//if any visible items are clicked
+$('li').click(function() {
+if($(this).attr('class') == 'items left-pos') {
+   swap('counter-clockwise');
+}
+else {
+  swap('clockwise');
+}
+});
+//Image-slider close//
 });
 $('.smoothScroll').click(function () {
   event.preventDefault();

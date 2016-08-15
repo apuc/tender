@@ -109,6 +109,9 @@
 	}
 	.cause{
 		padding: 60px 0;
+		p{
+			display: block;
+		}
 		.cause__tabs{
 			width: 100%;
 			.title__tabs{
@@ -183,7 +186,7 @@
 		}
 	}
 	.managing-structure{
-		
+
 	}
 	.about-it{
 		padding: 60px 0;
