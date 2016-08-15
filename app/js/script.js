@@ -207,6 +207,44 @@ $(document).ready(function () {
             dots: true
           }
         },
+        {
+          breakpoint: 1020,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+      ]
+    });
+    $('.center-2').slick({
+        arrows: true,
+        centerMode: true,
+        centerPadding: '160px',
+        dots: false,
+        infinite: true,
+        variableWidth: true,
+        slidesToShow: 1,
+        responsive: [
+        {
+          breakpoint: 736,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 1020,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
       ]
     });
 
@@ -222,14 +260,70 @@ $(document).ready(function () {
         if(currentPlayer)
             currentPlayer.pauseVideo();
     });
+    /////////
 
-    // function onPlayerReady(event) {
-    //     event.target.playVideo();
-    // }
-    //
-    // function onPlayerStateChange(event){
-    //     if (event.data == YT.PlayerState.PLAYING) {
-    //         currentPlayer = event.target;
-    //     }
-    // }
+
+
+
+
+
+        $('.page__tabs_target').click(function() {
+          var width =  $(window).width();
+          console.log(width);
+          if(width<=736) {
+            var tab = $(this).data('tab');
+            console.log(tab);
+            var art = $('article.'+tab);
+            $('.page__box').show();
+            art.show();
+            console.log(art);
+          }
+    });
+
+////////
+$(".owl-carousel").owlCarousel({
+  loop: true,
+  margin: 35,
+  nav : true,
+  navText: false,
+  navigation:true,
+  /*pagination : true,*/
+  items: 3,
+  autoplay: false,
+  /*singleItem:true,*/
+  responsiveClass:true,
+  responsive: {
+    0: {
+      items: 1,
+      nav: true,
+    },
+    600: {
+      items: 1,
+      nav: true,
+    },
+    1000: {
+      items: 1,
+      nav: true,
+      loop: true,
+    },
+    1200: {
+      items: 3,
+      nav: true,
+      loop: true,
+
+    }
+  }
+});
+});
+$('.smoothScroll').click(function () {
+  event.preventDefault();
+  var href = $(this).attr('href');
+  var target = $(href);
+    if (target.length > 1){
+      var top = target.offset().top;
+    }
+
+  $('html,body').animate({
+  scrollTop: top
+  }, 1000);
 });

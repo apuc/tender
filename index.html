@@ -9,6 +9,7 @@
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
     <link href="css/style.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -23,22 +24,24 @@
             <span class="sw-footer"></span>
           </span>
       </button>
-      <ul class="mnu">
-        <li><a href="">Главная</a></li>
-        <li><a href="">Как выиграть тендер</a></li>
-        <li><a href="">Заявка на выигрыш тендера</a></li>
-        <li><a href="">Причины не выиграша тендеров</a></li>
-        <li><a href="">Истории, о том как мы выиграли</a></li>
-        <li><a href="">Заявка на участие</a></li>
-        <li><a href="">Этапы работы</a></li>
-        <li><a href="">Управляющий состав</a></li>
-        <li><a href="">Увеличить оборот бизнеса</a></li>
-        <li><a href="">Контактная информация</a></li>
-      </ul>
+
   </div>
   <a href="" class="header__logo">Brocard <span class="header__logo_circle"></span>Tender</a>
   <span class="header__number"><p>8 (909) 903 44 28</p></span>
-  <span class="header__call-icon"></span>
+  <a href="#go_main" class="header__call-icon smoothScroll"><span class="call-icon"></span></a>
+  <!-- <span class="header__call-icon"></span> -->
+  <ul class="mnu">
+    <li><a href="">Главная</a></li>
+    <li><a href="">Как выиграть тендер</a></li>
+    <li><a href="">Заявка на выигрыш тендера</a></li>
+    <li><a href="">Причины не выиграша тендеров</a></li>
+    <li><a href="">Истории, о том как мы выиграли</a></li>
+    <li><a href="">Заявка на участие</a></li>
+    <li><a href="">Этапы работы</a></li>
+    <li><a href="">Управляющий состав</a></li>
+    <li><a href="">Увеличить оборот бизнеса</a></li>
+    <li><a href="">Контактная информация</a></li>
+  </ul>
   <div class="header__about">
     <div class="header__about_text">
       <h2>Почему <span class="color">91<sup>%</sup></span> подрядчиков <br>  никогда не смогут выиграть тендер?</h2>
@@ -106,39 +109,51 @@
         	<!-- fieldsets -->
         	<fieldset>
         		<h2 class="fs-title"><span class="fs-title-number">1</span>Выберите вид направления  деятельности вашего бизнеса</h2>
-        		<span class="msform-line"></span>
-            <input type="radio" class="radio" id="radio-1" name="radio"/>
-            <label for="radio-1"><span></span>Товары</label>
-            <input type="radio" class="radio" id="radio-2" name="radio" />
-            <label for="radio-2"><span></span>Работы/услуги</label>
+            <span class="fs-step">Шаг 1 из 4</span>
+            <span class="msform-line"></span>
+            <div class="fs-obvertka">
+              <input type="radio" class="radio" id="radio-1" name="radio"/>
+              <label for="radio-1"><span></span>Товары</label>
+              <input type="radio" class="radio" id="radio-2" name="radio" />
+              <label for="radio-2"><span></span>Работы/услуги</label>
+            </div>
 
-        		<input type="button" name="next" class="next action-button" value="Next" />
+          		<input type="button" name="next" class="next action-button" value="Далее" />
         	</fieldset>
         	<fieldset>
             <h2 class="fs-title"><span class="fs-title-number">2</span>Выигрывали ли вы ранее тендеры?</h2>
-        		<span class="msform-line"></span>
-            <input type="radio" class="radio" id="radio-3" name="radio-1"/>
-            <label for="radio-3"><span></span>Да</label>
-            <input type="radio" class="radio" id="radio-4" name="radio-1" />
-            <label for="radio-4"><span></span>Нет</label>
-        		<input type="button" name="previous" class="previous action-button" value="Previous" />
-        		<input type="button" name="next" class="next action-button" value="Next" />
+            <span class="fs-step">Шаг 2 из 4</span>
+            <span class="msform-line"></span>
+            <div class="fs-obvertka">
+              <input type="radio" class="radio" id="radio-3" name="radio-1"/>
+              <label for="radio-3"><span></span>Да</label>
+              <input type="radio" class="radio" id="radio-4" name="radio-1" />
+              <label for="radio-4"><span></span>Нет</label>
+            </div>
+        		<input type="button" name="previous" class="previous action-button" value="Назад" />
+        		<input type="button" name="next" class="next action-button" value="Далее" />
         	</fieldset>
         	<fieldset>
             <h2 class="fs-title"><span class="fs-title-number">3</span>Напишите направление деятельности  вашей компании</h2>
-        		<span class="msform-line"></span>
-        		<textarea name="address" placeholder="Напишите, чем занимается компания?"></textarea>
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-        		<input type="button" name="next" class="next action-button" value="Next" />
+            <span class="fs-step">Шаг 3 из 4</span>
+            <span class="msform-line"></span>
+        	  <div class="fs-obvertka">
+        	    	<textarea name="address" placeholder="Напишите, чем занимается компания?"></textarea>
+        	  </div>
+            <input type="button" name="previous" class="previous action-button" value="Назад" />
+        		<input type="button" name="next" class="next action-button" value="Далее" />
         	</fieldset>
         	<fieldset>
             <h2 class="fs-title"><span class="fs-title-number">4</span>Оставьте ваши контакты</h2>
+            <span class="fs-step">Шаг 4 из 4</span>
             <p class="fs-title-about">и наш менеджер в течение 15 минут расскажет вам  о выставленных тендерах</p>
-        		<span class="msform-line"></span>
-        		<input type="text" name="fname" placeholder="First Name" />
-        		<input type="text" name="lname" placeholder="Last Name" />
-        		<input type="button" name="previous" class="previous action-button" value="Previous" />
-        		<input type="submit" name="submit" class="submit action-button" value="Submit" />
+            <span class="msform-line"></span>
+            <div class="fs-obvertka">
+              <input type="text" name="fname" placeholder="Ваше имя" />
+              <input type="text" name="lname" placeholder="Телефон" />
+            </div>
+        		<input type="button" name="previous" class="previous action-button" value="Назад" />
+        		<input type="submit" name="submit" class="submit action-button" value="Отправить" />
         	</fieldset>
 
         </form>
@@ -306,6 +321,11 @@
   <div class="container">
     <span class="line green-line"></span>
     <h2 class="title-text"><b>Управляющий состав:</b></h2>
+    <div class="structure-slider center-2">
+      <div class="structure-slider_items"><img src="img/am-slide.png" alt=""></div>
+  		<div class="structure-slider_items"><img src="img/tya-slide.png" alt=""></div>
+  		<div class="structure-slider_items"><img src="img/kl-slide.png" alt=""></div>
+    </div>
   </div>
 </section>
 <section class="about-it">
@@ -343,7 +363,8 @@
     <div class="about-it__form">
       <h3 class="about-it__oborot_title title-blue">Заполните форму и узнайте как работать напрямую с заказчиком
 без процедуры закупокв соответствии с положением 44-ФЗ<span>*</span></h3>
-      <form class="about-it__form_form-2"  method="post">
+      <a name="cont"  id="go-main"></a>
+      <form class="about-it__form_form-2 "   method="post">
         <input class="about-it_input fokus-1" type="text" placeholder="Ваше имя">
         <input class="about-it_input fokus-2" type="text" placeholder="Ваш телефон">
         <button class="form__block_tender-form_send-btn about-it__form_form-2_send-btn" type="button" name="button">Oтправить</button>
@@ -370,9 +391,6 @@
       <button class="form__block_tender-form_send-btn about-it__form_form-2_send-btn form-ask_send" type="button" name="button">Oтправить</button>
     </form>
   </div>
-  <div class="container">
-
-  </div>
 </section>
 <!-- @@close-->
 
@@ -388,11 +406,12 @@
 </section>
 <!-- @@close-->
 </body>
-<script src='https://code.jquery.com/jquery-2.2.2.min.js' type="text/javascript"></script>
+<script src='https://code.jquery.com/jquery-2.1.2.min.js' type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
 <script src="js/script.min.js" type="text/javascript"></script>
 <script src="js/jquery.classyloader.min.js" type="text/javascript"></script>
 <script src="js/jquery.circleGraphic.js" type="text/javascript"></script>
+<script src="js/owl.carousel.js" type="text/javascript"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 </html>

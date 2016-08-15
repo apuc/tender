@@ -52,12 +52,16 @@
 }
 .header__call-icon{
   display: none;
-  background-image: url("../img/icon-tel.png");
-  background-repeat: no-repeat;
-  size: 30px;
+  cursor: pointer;
   float: right;
   cursor: pointer;
   background-size: contain;
+  .call-icon{
+    background-image: url("../img/icon-tel.png");
+    background-repeat: no-repeat;
+    size: 30px;
+    cursor: pointer;
+  }
 }
 .header__about{
   width: 80%;
@@ -237,10 +241,12 @@
   display: none;
   width: 100%;
   float: left;
-  background-color: #005193;
+  background-color: rgba(7, 90, 158, 0.48);
   position: relative;
-  z-index: 3;
-  padding: 0;
+  z-index: 30;
+  padding: 30px 10px;
+  box-sizing: border-box;
+  text-align: center;
   li{
     list-style-type: none;
     a{
@@ -249,6 +255,11 @@
       font-family: $ub;
       font-weight: 400;
       text-decoration: none;
+      line-height: 30px;
+      cursor: pointer;
+      &:hover{
+        color: #0bb743;
+      }
     }
   }
 }

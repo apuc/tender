@@ -17,12 +17,19 @@
 	.header__mnu{
 		position: relative;
 		z-index: 9999;
+		width: 21.3%;
 	}
 	.header__number{
 		display: none;
 	}
+	.header__logo{
+		width: 68.3%;
+	}
 	.header__call-icon{
 		display: block;
+		cursor: pointer;
+		z-index: 10;
+		position: relative;
 	}
 	.header__about{
 		width: 100%;
@@ -121,6 +128,8 @@
 			}
 			.page__box{
 				display: none;
+				width: 100%;
+				border-top: 1px solid #0c6;
 			}
 		}
 	}
@@ -174,17 +183,69 @@
 		}
 	}
 	.managing-structure{
-		display: none;
+		
 	}
 	.about-it{
-		display: none;
+		padding: 60px 0;
+		.about-it__oborot{
+			width: 90%;
+			padding: 10px;
+			&_items{
+				width: 50%;
+				&_text{
+					font-size: 14px;
+				}
+			}
+		}
+		.about-it__form{
+			.title-blue{
+				padding: 0 10px;
+			}
+			&_form-2{
+				width: 90%;
+				.about-it_input{
+					min-width: inherit;
+					width: 100%;
+				}
+			}
+			&_footnote{
+				width: 90%;
+			}
+
+		}
 	}
 	.tender-map{
+		#map{
+			height: 1200px;
+		}
 		.tender-map__contacts{
+			min-width: inherit;
+			width: 95%;
 			top: 65px;
 			left: 0;
 			margin-left: 2%;
 			margin-right: 2%;
+		}
+		.tender-map__form-ask{
+			width: 95%;
+			top: 450px;
+			left: 0;
+			margin-left: 2%;
+			margin-right: 2%;
+			padding: 45px 20px;
+		}
+	}
+	.footer{
+		.worker{
+			display: none;
+		}
+		.header__logo{
+			width: 100%;
+		}
+		.confidicatal{
+			width: 100%;
+			margin: 15px 0;
+
 		}
 	}
 }
