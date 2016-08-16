@@ -264,7 +264,7 @@ $('li.items').each(function(index) {
 //swap images function
 function swap(action) {
 var direction = action;
-var number = $('.main-pos').attr('id');
+
   //moving carousel backwards
   if(direction == 'counter-clockwise') {
     var leftitem = $('.left-pos').attr('id') - 1;
@@ -283,7 +283,11 @@ var number = $('.main-pos').attr('id');
     }
   }
   if(direction == 'clockwise-2') {
-    var rightitem = $('.right-pos').attr('id') - 1;
+    var rightitem = parseInt($('.right-pos').attr('id')) + 1;
+    if(rightitem > itemCount){
+      rightitem = 1;
+    }
+    console.log(rightitem);
     if(rightitem == 0) {
       rightitem = itemCount;
     }
@@ -337,8 +341,8 @@ var number = $('.main-pos').attr('id');
   //     startItem = 1;
   //   }
   // }
-
-  console.log(number);
+var number = $('.main-pos').attr('id');
+  //console.log(number);
   $('.count-number').html(number);
 
 }

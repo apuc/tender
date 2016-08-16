@@ -7,9 +7,10 @@
   background-position-x: 50%;
   background-image: url("../img/header-fon.png");
   background-size: cover;
-  padding-top: 300px;
+  padding-top: 100px;
   box-sizing: border-box;
   position: relative;
+  height: 100vh;
 }
 .header__mnu, .header__logo, .header__number{
   float: left;
@@ -173,7 +174,7 @@
     left: 10%;
     height: 50px;
     position: relative;
-    z-index: 3;
+    z-index: 30;
     border: none;
     top: 0;
     border-radius: 50%;
@@ -240,13 +241,18 @@
 .mnu{
   display: none;
   width: 100%;
-  float: left;
-  background-color: rgba(7, 90, 158, 0.48);
-  position: relative;
-  z-index: 30;
-  padding: 30px 10px;
+  height: 100vh;
+  background-color: #1d4973;
+  position: absolute;
+  z-index: 20;
+  padding: 130px 10px;
+  margin: 0;
   box-sizing: border-box;
   text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   li{
     list-style-type: none;
     a{
@@ -255,7 +261,7 @@
       font-family: $ub;
       font-weight: 400;
       text-decoration: none;
-      line-height: 30px;
+      line-height: 35px;
       cursor: pointer;
       &:hover{
         color: #0bb743;
