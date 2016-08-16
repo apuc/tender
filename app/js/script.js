@@ -80,7 +80,7 @@ $(document).ready(function () {
       $("."+ target).show();
     });
 
-// close mobile-tab //    
+// close mobile-tab //
 
 // open map //
     google.maps.event.addDomListener(window, 'load', init);
@@ -193,16 +193,7 @@ $(document).ready(function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 1020,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
+            dots: false
           }
         },
       ]
@@ -245,17 +236,17 @@ $(document).ready(function () {
 
 //Image-slider open //
 
-//slideshow style interval
-var autoSwap = setInterval( swap,3500);
-
-//pause slideshow and reinstantiate on mouseout
-$('ul, span').hover(
-function () {
-  clearInterval(autoSwap);
-},
-function () {
- autoSwap = setInterval( swap,3500);
-});
+// //slideshow style interval
+// var autoSwap = setInterval( swap,3500);
+//
+// //pause slideshow and reinstantiate on mouseout
+// $('ul, span').hover(
+// function () {
+//   clearInterval(autoSwap);
+// },
+// function () {
+//  autoSwap = setInterval( swap,3500);
+// });
 
 //global variables
 var items = [];
@@ -273,67 +264,87 @@ $('li.items').each(function(index) {
 //swap images function
 function swap(action) {
 var direction = action;
+var number = $('.main-pos').attr('id');
+  //moving carousel backwards
+  if(direction == 'counter-clockwise') {
+    var leftitem = $('.left-pos').attr('id') - 1;
+    if(leftitem == 0) {
+      leftitem = itemCount;
+    }
 
-//moving carousel backwards
-if(direction == 'counter-clockwise') {
-  var leftitem = $('.left-pos').attr('id') - 1;
-  if(leftitem == 0) {
-    leftitem = itemCount;
+    $('.right-pos').removeClass('right-pos').addClass('back-pos');
+    $('.main-pos').removeClass('main-pos').addClass('right-pos');
+    $('.left-pos').removeClass('left-pos').addClass('main-pos');
+    $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
+
+    startItem--;
+    if(startItem < 1) {
+      startItem = itemCount;
+    }
+  }
+  if(direction == 'clockwise-2') {
+    var rightitem = $('.right-pos').attr('id') - 1;
+    if(rightitem == 0) {
+      rightitem = itemCount;
+    }
+
+    $('.left-pos').removeClass('left-pos').addClass('back-pos');
+    $('.main-pos').removeClass('main-pos').addClass('left-pos');
+    $('.right-pos').removeClass('right-pos').addClass('main-pos');
+    $('#'+rightitem+'').removeClass('back-pos').addClass('right-pos');
+
+    startItem--;
+    if(startItem < 1) {
+      startItem = itemCount;
+    }
   }
 
-  $('.right-pos').removeClass('right-pos').addClass('back-pos');
-  $('.main-pos').removeClass('main-pos').addClass('right-pos');
-  $('.left-pos').removeClass('left-pos').addClass('main-pos');
-  $('#'+leftitem+'').removeClass('back-pos').addClass('left-pos');
+  //moving carousel forward
+  // if(direction == 'clockwise' ) {
+  //   function pos(positionvalue) {
+  //     if(positionvalue != 'leftposition') {
+  //       //increment image list id
+  //       position++;
+  //
+  //       //if final result is greater than image count, reset position.
+  //       if((startItem+position) > resetCount) {
+  //         position = 1-startItem;
+  //       }
+  //     }
+  //
+  //     //setting the left positioned item
+  //     if(positionvalue == 'leftposition') {
+  //       //left positioned image should always be one left than main positioned image.
+  //       position = startItem - 1;
+  //
+  //       //reset last image in list to left position if first image is in main position
+  //       if(position < 1) {
+  //         position = itemCount;
+  //       }
+  //     }
+  //
+  //     return position;
+  //   }
+  //
+  //  $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
+  //  $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
+  //  $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
+  //  $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
+  //
+  //   startItem++;
+  //   position=0;
+  //   if(startItem > itemCount) {
+  //     startItem = 1;
+  //   }
+  // }
 
-  startItem--;
-  if(startItem < 1) {
-    startItem = itemCount;
-  }
-}
+  console.log(number);
+  $('.count-number').html(number);
 
-// //moving carousel forward
-// if(direction == 'clockwise' || direction == '' || direction == null ) {
-//   function pos(positionvalue) {
-//     if(positionvalue != 'leftposition') {
-//       //increment image list id
-//       position++;
-//
-//       //if final result is greater than image count, reset position.
-//       if((startItem+position) > resetCount) {
-//         position = 1-startItem;
-//       }
-//     }
-//
-//     //setting the left positioned item
-//     if(positionvalue == 'leftposition') {
-//       //left positioned image should always be one left than main positioned image.
-//       position = startItem - 1;
-//
-//       //reset last image in list to left position if first image is in main position
-//       if(position < 1) {
-//         position = itemCount;
-//       }
-//     }
-//
-//     return position;
-//   }
-//
-//  $('#'+ startItem +'').removeClass('main-pos').addClass('left-pos');
-//  $('#'+ (startItem+pos()) +'').removeClass('right-pos').addClass('main-pos');
-//  $('#'+ (startItem+pos()) +'').removeClass('back-pos').addClass('right-pos');
-//  $('#'+ pos('leftposition') +'').removeClass('left-pos').addClass('back-pos');
-//
-//   startItem++;
-//   position=0;
-//   if(startItem > itemCount) {
-//     startItem = 1;
-//   }
-// }
 }
 //next button click function
 $('#next').click(function() {
-swap('clockwise');
+swap('clockwise-2');
 });
 
 //prev button click function
@@ -347,7 +358,7 @@ if($(this).attr('class') == 'items left-pos') {
    swap('counter-clockwise');
 }
 else {
-  swap('clockwise');
+  swap('clockwise-2');
 }
 });
 //Image-slider close//

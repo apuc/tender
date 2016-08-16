@@ -143,6 +143,11 @@
 				display: none !important;
 			}
 		}
+		p{
+			.icon-castle{
+				left: 8%;
+			}
+		}
 
 	}
 	.form{
@@ -186,7 +191,19 @@
 		}
 	}
 	.managing-structure{
-
+		.wrap{
+			bottom: -50px;
+			left: 38%;
+		}
+		.image-carousel .carousel .right-pos{
+			margin-left: -9em!important;
+		}
+		.image-carousel .carousel .right-pos{
+			margin-left: -9em!important;
+		}
+		.image-carousel .carousel .back-pos{
+			margin-left: -9em!important;
+		}
 	}
 	.about-it{
 		padding: 60px 0;
