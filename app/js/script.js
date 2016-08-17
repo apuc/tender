@@ -82,20 +82,7 @@ $(document).ready(function () {
 
 // close mobile-tab //
 
-// open map //
-    google.maps.event.addDomListener(window, 'load', init);
 
-    function init() {
-        var mapOptions = {
-            zoom: 15,
-            center: new google.maps.LatLng(55.7693135, 37.5948613), // New York
-            styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},{"weight":2},{"gamma":0.84}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]}]
-        };
-        var mapElement = document.getElementById('map');
-        var map = new google.maps.Map(mapElement, mapOptions);
-
-    }
-// close map //
 
 
     var current_fs, next_fs, previous_fs; //fieldsets
@@ -379,3 +366,54 @@ $('.smoothScroll').click(function () {
   scrollTop: top
   }, 1000);
 });
+
+
+
+// open map //
+    // google.maps.event.addDomListener(window, 'load', init);
+    //
+    // function init() {
+    //     var mapOptions = {
+    //         zoom: 15,
+    //         center: new google.maps.LatLng(55.7693135, 37.5948613), // New York
+    //         styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},{"weight":2},{"gamma":0.84}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]}]
+    //     };
+    //     var mapElement = document.getElementById('map');
+    //     var map = new google.maps.Map(mapElement, mapOptions);
+    //
+    // }
+// close map //
+function initMap() {
+  var uluru = {lat: 55.769480, lng: 37.597061};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: uluru,
+    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},{"weight":2},{"gamma":0.84}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]}]
+});
+
+var contentString = '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Наши контактные данные</h1>'+
+    '<div id="bodyContent">'+
+    '<p><img src="img/icon-geo.png" alt="" height="20" width="15"> Москва, ул. Тверская 57 </p><br>' +
+    '<p><img src="img/icon-mobile.png" alt="" height="20" width="15">+7 (909) 903 44-28 +1(703) 877 04-88</p><br>' +
+    '<p><img src="img/icon-mail.png" alt="" height="20" width="18">info@brocard.ru</p><br>' +
+
+    '</div>'+
+    '</div>';
+
+var infowindow = new google.maps.InfoWindow({
+  content: contentString
+});
+
+var marker = new google.maps.Marker({
+  position: uluru,
+  map: map,
+  title: 'Brocard Tender'
+});
+marker.addListener('click', function() {
+  infowindow.open(map, marker);
+});
+
+}
